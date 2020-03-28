@@ -1,0 +1,17 @@
+.git
+.editorconfig
+Makefile
+README.md
+LICENSE
+NOTICE
+
+**/*.iml
+
+# Mine
+terraform/
+data/db
+
+# Binaries
+api/api
+api/binaries
+*.amd64
