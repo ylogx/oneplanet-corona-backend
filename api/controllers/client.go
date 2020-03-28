@@ -28,25 +28,6 @@ type All struct {
 	Active    int
 }
 
-//func (c *Client) ListUsers() ([]User, error) {
-//	rel := &url.URL{Path: "/all"}
-//	u := c.BaseURL.ResolveReference(rel)
-//	req, err := http.NewRequest("GET", u.String(), nil)
-//	if err != nil {
-//		return nil, err
-//	}
-//	req.Header.Set("Accept", "application/json")
-//	req.Header.Set("User-Agent", c.UserAgent)
-//
-//	resp, err := c.httpClient.Do(req)
-//	if err != nil {
-//		return nil, err
-//	}
-//	defer resp.Body.Close()
-//	var allData []All
-//	err = json.NewDecoder(resp.Body).Decode(&allData)
-//	return allData, err
-//}
 func (c *Client) AllCountries() (*All, error) {
 	req, err := c.newRequest("GET", "/all", nil)
 	if err != nil {
