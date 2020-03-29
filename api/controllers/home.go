@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/gin-gonic/gin"
 	"gitlab.com/oneplanet/corona-backend/api/utils"
+	"gitlab.com/oneplanet/corona-backend/api/utils/log"
 	"net/http"
 	"net/url"
 )
@@ -10,6 +11,7 @@ import (
 func GetDataForHomepage(c *gin.Context) {
 	apiUrl, err := url.Parse(DataApiUrl)
 	if err != nil {
+		log.Error(err)
 		utils.Respond(c, utils.Message(false, "Data Api Error"))
 		return
 	}
@@ -23,6 +25,7 @@ func GetDataForHomepage(c *gin.Context) {
 
 	allData, err := apiClient.AllCountries()
 	if err != nil {
+		log.Error(err)
 		utils.Respond(c, utils.Message(false, "Data Api Parsing Error"))
 		return
 	}
