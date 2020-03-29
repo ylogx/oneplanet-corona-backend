@@ -18,6 +18,8 @@ RUN GIN_MODE=${GIN_MODE} go build -o server -v main.go
 FROM debian:stretch
 EXPOSE 8080
 
+RUN apt-get update && apt-get install -y ca-certificates --no-install-recommends && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 COPY --from=builder /go/src/gitlab.com/oneplanet/corona-backend/api .
 
