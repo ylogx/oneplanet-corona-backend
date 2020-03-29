@@ -3,6 +3,7 @@ data/db
 
 # Binary
 api/api
+api/tmp
 *.amd64
 
 # Prod Info

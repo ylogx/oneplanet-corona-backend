@@ -13,5 +13,6 @@ data/db
 
 # Binaries
 api/api
+api/tmp
 api/binaries
 *.amd64
