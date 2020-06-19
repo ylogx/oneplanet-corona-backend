@@ -21,7 +21,7 @@ To deploy on Google Cloud Run, use: `make gcr_pipeline`. There are tons of usefu
 
 ### Deployment
 
-Deployed at: [/home][api-home-response]
+Deployed at: [/home][api-home-response]  
 Response:
 ```json
 {
